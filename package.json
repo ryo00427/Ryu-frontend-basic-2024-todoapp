@@ -6,10 +6,10 @@
   "author": "MoAI522",
   "license": "MIT",
   "scripts": {
-    "sb": "storybook dev -p 6006  ./src",
+    "sb": "storybook dev -p 6006  ",
     "dev": "webpack serve --open --mode development",
     "build": "webpack --mode production",
-    "build-storybook": "storybook build  ./src",
+    "build-storybook": "storybook build  ",
     "chromatic": "npx chromatic --project-token=072222ef1ac3"
   },
   "devDependencies": {
