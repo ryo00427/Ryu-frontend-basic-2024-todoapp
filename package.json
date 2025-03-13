@@ -9,7 +9,7 @@
     "sb": "storybook dev -p 6006  -dir ",
     "dev": "webpack serve --open --mode development",
     "build": "webpack --mode production",
-    "build-storybook": "storybook build -dir ",
+    "build-storybook": "yarn run build-storybook -o /tmp/chromatic--2037-G6x5Ti3XCmmF",
     "chromatic": "npx chromatic --project-token=072222ef1ac3"
   },
   "devDependencies": {
