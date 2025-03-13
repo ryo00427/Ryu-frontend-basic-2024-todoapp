@@ -1,81 +1,73 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
-import TEXT from "../../../variables/texts";
-import { Checkbox } from "../../Atoms/Checkbox";
-import { EditButton } from "../../Atoms/EditButton";
-import { Input } from "../../Atoms/Input";
 import { AddTaskButton  } from "../../Atoms/AddTaskButton";
-export const TodoCard = ({
-  onTaskNameChange,
-  onTaskComplete,
-  taskName = "",
-  defaultIsEditing = false,
-}) => {
-  const [isEditing, setIsEditing] = useState(defaultIsEditing);
+import { Task } from "../../Molecules/Task";
+export const TodoCard = ()=> {
+  const [taskList, setTaskList] = useState([]);
 
-  const onEditComplete = (value) => {
-    setIsEditing(false);
-    onTaskNameChange(value);
+  const onAddTaskButtonClick = () => {
+    setTaskList([...taskList, { name: "", initializing: true }]);
   };
 
-  const onEditButtonClick = () => {
-    setIsEditing(true);
+  const onTaskComplete = (index) => {
+    setTaskList(taskList.filter((_, i) => i !== index));
+  };
+
+  const onTaskNameChange = (value, index) => {
+    setTaskList((prevTaskList) => {
+      // タスク名が空文字列なら削除
+      if (value.trim() === "") {
+        return prevTaskList.filter((_, i) => i !== index);
+      }
+      // タスク名を更新
+      return prevTaskList.map((task, i) =>
+        i === index ? { ...task, name: value, initializing: false } : task
+      );
+    });
   };
 
   return (
     <StyledWrapper>
-        <StyledCheckboxWrapper>
-        <AddTaskButton onClick={onTaskComplete} />
-      </StyledCheckboxWrapper>
-      <StyledCheckboxWrapper>
-        <Checkbox onClick={onTaskComplete} />
-      </StyledCheckboxWrapper>
-      {isEditing ? (
-        <Input onEditComplete={onEditComplete} defaultValue={taskName} />
-      ) : (
-        <StyledNameAndButtonWrapper>
-          <StyledTaskName>{taskName}</StyledTaskName>
-          <StyledEditButtonWrapper>
-            <EditButton onClick={onEditButtonClick} />
-          </StyledEditButtonWrapper>
-        </StyledNameAndButtonWrapper>
-      )}
-    </StyledWrapper>
+  <AddTaskButton onClick={onAddTaskButtonClick} />
+  <StyledTaskList>
+    {taskList.map((task, index) => (
+      <Task
+        key={index}
+        onTaskComplete={() => onTaskComplete(index)}
+        onTaskNameChange={(value) => onTaskNameChange(value, index)}
+        taskName={task.name}
+        defaultIsEditing={task.initializing}
+      />
+    ))}
+  </StyledTaskList>
+</StyledWrapper>
   );
 };
+
 export default TodoCard
 
 const StyledWrapper = styled.div`
   display: flex;
-  align-items: center;
-  padding: 2px 6px;
+  padding: 20px;
   overflow: hidden;
+  background-color: ${COLOR.BLACK};
+  border-radius: 2px;
+  gap: 0px;
+  border: none;
+  outline: none;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 10px;
 `;
 
-const StyledCheckboxWrapper = styled.div`
-  margin-right: 10px;
+const StyledTaskList = styled.div`
+  background-color: ${COLOR.BLACK};
+  border-radius: 2px;
+  padding: 4 4px;
+  border: none;
+  outline: none;
+  width: 100%;
+  flex-direction: column
 `;
 
-const StyledNameAndButtonWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  flex: 1 1 auto;
-  overflow: hidden;
-`;
-
-const StyledTaskName = styled.div`
-  ${TEXT.S}
-  color: ${COLOR.LIGHT_GRAY};
-  flex: 1 1 auto;
-  margin-right: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-`;
-
-const StyledEditButtonWrapper = styled.div`
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-`;
