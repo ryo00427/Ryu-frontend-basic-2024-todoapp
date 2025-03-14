@@ -10,7 +10,7 @@ export const Checkbox = ({ onClick }) => {
     </StyledButton>
   );
 };
-
+export default Checkbox;
 
 const StyledButton = styled.button`
   border: 2px solid ${COLOR.LIGHT_GRAY};
