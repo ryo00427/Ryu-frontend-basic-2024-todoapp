@@ -42,7 +42,7 @@ export const Task = ({
     </StyledWrapper>
   );
 };
-export default Task
+
 
 const StyledWrapper = styled.div`
   display: flex;
