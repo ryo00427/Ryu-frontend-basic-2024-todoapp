@@ -9,11 +9,6 @@ export const EditButton = ({ onClick }) => {
     </StyledButton>
   );
 };
-
-
- export const EditButton = () => {
-  return <img src={pencil}/>;
-}
 export default EditButton;
 
 
