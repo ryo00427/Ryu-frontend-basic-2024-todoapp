@@ -30,7 +30,7 @@ export const Input = ({ onEditComplete, defaultValue = "" }) => {
 };
 
 
-const StyledInput = styled.input.attrs((props) => ({ ...props }))`
+const StyledInput = styled.input`
   background-color: ${COLOR.BLACK};
   color: ${COLOR.LIGHT_GRAY};
   ${TEXT.S}
