@@ -1,7 +1,5 @@
-import { Checkbox } from "./index";
-
-export default { component: Checkbox };
-
+import CheckBox from "./index";
+export default { component: CheckBox };
 export const Default = {
     args: {
         onClick: () => console.log("clicked"),
