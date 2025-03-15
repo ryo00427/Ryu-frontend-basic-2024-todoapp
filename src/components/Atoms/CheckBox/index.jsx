@@ -3,7 +3,7 @@ import styled from "styled-components";
 import check from "../../../assets/svg/check.svg";
 import COLOR from "../../../variables/color";
 
-export const Checkbox = ({ onClick }) => {
+const Checkbox = ({ onClick }) => {
   return (
     <StyledButton onClick={onClick}>
       <img src={check} />
