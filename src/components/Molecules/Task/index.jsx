@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
-import checkbox  from "../../Atoms/Checkbox";
+import CheckBox  from "../../Atoms/Checkbox";
 import { EditButton } from "../../Atoms/EditButton";
 import { Input } from "../../Atoms/Input";
 
@@ -26,7 +26,7 @@ export const Task = ({
   return (
     <StyledWrapper>
       <StyledCheckboxWrapper>
-        <checkbox onClick={onTaskComplete} />
+        <CheckBox onClick={onTaskComplete} />
       </StyledCheckboxWrapper>
       {isEditing ? (
         <Input onEditComplete={onEditComplete} defaultValue={taskName} />
