@@ -2,14 +2,14 @@ import React from "react";
 import check from "../../../assets/svg/check.svg";
 import COLOR from "../../../variables/color";
 import styled from "styled-components";
-const checkBox = ({ onClick }) => {
+const checkbox = ({ onClick }) => {
   return (
     <StyledButton onClick={onClick}>
       <img src={check} />
     </StyledButton>
   );
 };
-export default checkBox;
+export default checkbox;
 
 const StyledButton = styled.button`
   border: 2px solid ${COLOR.LIGHT_GRAY};
