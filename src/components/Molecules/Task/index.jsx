@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
-import {Checkbox} from "../../Atoms/checkBox";
+import {Checkbox} from "../../Atoms/CheckBox";
 import EditButton from "../../Atoms/EditButton";
 import Input from "../../Atoms/Input";
 
