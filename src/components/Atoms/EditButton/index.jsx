@@ -9,8 +9,6 @@ export const EditButton = ({ onClick }) => {
     </StyledButton>
   );
 };
-export default EditButton;
-
 
 const StyledButton = styled.button`
   border: none;
