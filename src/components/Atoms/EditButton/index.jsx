@@ -10,7 +10,6 @@ export const EditButton = ({ onClick }) => {
   );
 };
 
-
 const StyledButton = styled.button`
   border: none;
   outline: none;
@@ -33,3 +32,4 @@ const StyledButton = styled.button`
     background-color: ${COLOR.LIGHT_GRAY_TRANSLUCENT};
   }
 `;
+
