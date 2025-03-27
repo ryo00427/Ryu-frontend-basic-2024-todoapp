@@ -17,8 +17,8 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 52px;
-  gap: 10px;
+  padding: 25px 20px 20px;
+  gap: 20px;
   line-height: 52px;
   @media (min-width: 768px) {
         line-height: 52px;
@@ -27,7 +27,7 @@ const StyledWrapper = styled.div`
 
 const StyledTaskList = styled.div`
   align-items: center;
-  width: 70%;
+  width: 95%;
   flex-direction: column;
   @media (min-width: 768px) {
     align-items: center;
