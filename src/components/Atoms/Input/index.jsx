@@ -28,7 +28,7 @@ export const Input = ({ onEditComplete, defaultValue = "" }) => {
     />
   );
 };
-
+export default Input;
 
 const StyledInput = styled.input`
   background-color: ${COLOR.BLACK};
