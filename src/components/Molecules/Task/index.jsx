@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
-import { CheckBox } from "../../Atoms/CheckBox";
-import { EditButton } from "../../Atoms/EditButton";
-import { Input } from "../../Atoms/Input";
+import CheckBox from "../../Atoms/CheckBox";
+import EditButton from "../../Atoms/EditButton";
+import Input from "../../Atoms/Input";
 
 export const Task = ({
   onTaskNameChange,
@@ -41,7 +41,7 @@ export const Task = ({
     </StyledWrapper>
   );
 };
-export default Task
+export default Task;
 
 const StyledWrapper = styled.div`
   display: flex;
