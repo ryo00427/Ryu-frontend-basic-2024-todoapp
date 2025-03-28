@@ -1,7 +1,5 @@
 name: Chromatic
-
 on: push
-
 jobs:
   chromatic-deployment:
     runs-on: ubuntu-20.04
