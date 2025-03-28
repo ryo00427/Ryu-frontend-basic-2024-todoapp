@@ -58,7 +58,7 @@ const StyledWrapper = styled.div`
   outline: none;
   width: 100%;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 0px;
 `;
 
 const StyledTaskList = styled.div`
