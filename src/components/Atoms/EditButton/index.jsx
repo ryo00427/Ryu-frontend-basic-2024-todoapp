@@ -10,6 +10,7 @@ const EditButton = ({ onClick }) => {
   );
 };
 export default EditButton;
+
 const StyledButton = styled.button`
   border: none;
   outline: none;
