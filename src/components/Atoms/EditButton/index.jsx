@@ -2,15 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import pencil from "../../../assets/svg/pencil.svg";
 import COLOR  from "../../../variables/color";
-export const EditButton = ({ onClick }) => {
+const EditButton = ({ onClick }) => {
   return (
     <StyledButton onClick={onClick}>
       <img src={pencil} />
     </StyledButton>
   );
 };
-
-
+export default EditButton;
 const StyledButton = styled.button`
   border: none;
   outline: none;
@@ -33,3 +32,4 @@ const StyledButton = styled.button`
     background-color: ${COLOR.LIGHT_GRAY_TRANSLUCENT};
   }
 `;
+
