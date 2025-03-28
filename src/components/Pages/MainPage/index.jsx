@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import BREAKPOINT  from "../../../variables/breakpoint";
 import { Title } from "../../Atoms/Title";
 import { TodoCard } from "../../Organisms/TodoCard";
 export const MainPage = ()=> {
@@ -17,20 +18,27 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25px 20px 20px;
-  gap: 20px;
-  line-height: 52px;
-  @media (min-width: 768px) {
-        line-height: 52px;
+  padding: 20px;
+  gap: 10px;
+  @media (min-width: ${BREAKPOINT.MEDIUM}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 60px 20px 10px;
   }
 `;
 
 const StyledTaskList = styled.div`
-  align-items: center;
-  width: 95%;
+  display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
+  align-items: center;
+  width: 93%;
+  flex-direction: column;
+  @media (min-width: ${BREAKPOINT.MEDIUM}) {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    line-height: 52px;
+    width: 30%;
   }
 `;
