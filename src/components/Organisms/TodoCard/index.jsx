@@ -48,23 +48,20 @@ export const TodoCard = ()=> {
 export default TodoCard
 
 const StyledWrapper = styled.div`
-  display: flex;
   padding: 20px;
   overflow: hidden;
   background-color: ${COLOR.BLACK};
   border-radius: 2px;
-  gap: 0px;
-  border: none;
-  outline: none;
-  width: 100%;
+  width: auto;
   flex-direction: column;
   margin-top: 0px;
 `;
 
 const StyledTaskList = styled.div`
+  display: flex;
   background-color: ${COLOR.BLACK};
   border-radius: 2px;
-  padding: 4 4px;
+  padding: 4px;
   border: none;
   outline: none;
   width: 100%;
