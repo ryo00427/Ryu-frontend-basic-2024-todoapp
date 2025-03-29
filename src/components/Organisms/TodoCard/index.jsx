@@ -49,22 +49,15 @@ export default TodoCard
 
 const StyledWrapper = styled.div`
   padding: 20px;
-  overflow: hidden;
-  background-color: ${COLOR.BLACK};
-  border-radius: 2px;
+  background-color: ${COLOR.LIGHT_BLACK};
   width: auto;
-  flex-direction: column;
-  margin-top: 0px;
 `;
 
 const StyledTaskList = styled.div`
   display: flex;
-  background-color: ${COLOR.BLACK};
-  border-radius: 2px;
-  padding: 4px;
-  border: none;
-  outline: none;
+  padding: 10px 0px 0px 0px;
   width: 100%;
-  flex-direction: column
+  flex-direction: column;
+  gap: 10px;
 `;
 
