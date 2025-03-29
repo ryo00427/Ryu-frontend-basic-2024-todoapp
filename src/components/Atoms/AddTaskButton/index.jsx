@@ -31,7 +31,7 @@ const StyledButton = styled.button`
   }
 
   &:hover {
-    background: ${COLOR.GREEN_TRANSLUCENT};
+    background-color: ${COLOR.GREEN_TRANSLUCENT};
   }
 `;
 
