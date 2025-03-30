@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
-import { AddTaskButton  } from "../../Atoms/AddTaskButton";
+import { AddTaskButton } from "../../Atoms/AddTaskButton";
 import { Task } from "../../Molecules/Task";
-export const TodoCard = ()=> {
+export const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
 
   const onAddTaskButtonClick = () => {
@@ -29,45 +29,34 @@ export const TodoCard = ()=> {
 
   return (
     <StyledWrapper>
-  <AddTaskButton onClick={onAddTaskButtonClick} />
-  <StyledTaskList>
-    {taskList.map((task, index) => (
-      <Task
-        key={index}
-        onTaskComplete={() => onTaskComplete(index)}
-        onTaskNameChange={(value) => onTaskNameChange(value, index)}
-        taskName={task.name}
-        defaultIsEditing={task.initializing}
-      />
-    ))}
-  </StyledTaskList>
-</StyledWrapper>
+      <AddTaskButton onClick={onAddTaskButtonClick} />
+      <StyledTaskList>
+        {taskList.map((task, index) => (
+          <Task
+            key={index}
+            onTaskComplete={() => onTaskComplete(index)}
+            onTaskNameChange={(value) => onTaskNameChange(value, index)}
+            taskName={task.name}
+            defaultIsEditing={task.initializing}
+          />
+        ))}
+      </StyledTaskList>
+    </StyledWrapper>
   );
 };
 
-export default TodoCard
+export default TodoCard;
 
 const StyledWrapper = styled.div`
-  display: flex;
   padding: 20px;
-  overflow: hidden;
-  background-color: ${COLOR.BLACK};
-  border-radius: 2px;
-  gap: 0px;
-  border: none;
-  outline: none;
-  width: 100%;
-  flex-direction: column;
-  margin-top: 10px;
+  background-color: ${COLOR.LIGHT_BLACK};
+  width: auto;
 `;
 
 const StyledTaskList = styled.div`
-  background-color: ${COLOR.BLACK};
-  border-radius: 2px;
-  padding: 4 4px;
-  border: none;
-  outline: none;
+  display: flex;
+  padding: 10px 0px 0px 0px;
   width: 100%;
-  flex-direction: column
+  flex-direction: column;
+  gap: 10px;
 `;
-
