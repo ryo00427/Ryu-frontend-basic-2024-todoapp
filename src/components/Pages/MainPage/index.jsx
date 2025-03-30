@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import BREAKPOINT  from "../../../variables/breakpoint";
+import BREAKPOINT from "../../../variables/breakpoint";
 import { Title } from "../../Atoms/Title";
 import { TodoCard } from "../../Organisms/TodoCard";
-export const MainPage = ()=> {
+export const MainPage = () => {
   return (
     <StyledWrapper>
       <Title />
@@ -11,8 +11,7 @@ export const MainPage = ()=> {
         <TodoCard />
       </StyledTaskList>
     </StyledWrapper>
-);
-  
+  );
 };
 const StyledWrapper = styled.div`
   display: flex;
