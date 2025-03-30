@@ -7,6 +7,7 @@ import EditButton from "../../Atoms/EditButton";
 import Input from "../../Atoms/Input";
 
 
+
 export const Task = ({
   onTaskNameChange,
   onTaskComplete,
@@ -42,7 +43,7 @@ export const Task = ({
     </StyledWrapper>
   );
 };
-export default Task;
+export default Task
 
 const StyledWrapper = styled.div`
   display: flex;

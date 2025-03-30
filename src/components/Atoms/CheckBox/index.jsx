@@ -1,8 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 import check from "../../../assets/svg/check.svg";
 import COLOR from "../../../variables/color";
-
+import styled from "styled-components";
 const CheckBox = ({ onClick }) => {
   return (
     <StyledButton onClick={onClick}>
@@ -24,13 +23,11 @@ const StyledButton = styled.button`
   justify-content: center;
   cursor: pointer;
   padding: 0;
-
   & > img {
     display: none;
     width: 100%;
     height: 100%;
   }
-
   &:hover {
     & > img {
       display: block;
