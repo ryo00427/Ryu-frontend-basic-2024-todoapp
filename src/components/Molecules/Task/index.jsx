@@ -6,8 +6,6 @@ import CheckBox from "../../Atoms/CheckBox";
 import EditButton from "../../Atoms/EditButton";
 import Input from "../../Atoms/Input";
 
-
-
 export const Task = ({
   onTaskNameChange,
   onTaskComplete,
