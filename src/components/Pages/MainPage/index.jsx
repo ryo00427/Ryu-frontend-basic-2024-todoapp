@@ -32,11 +32,9 @@ const StyledTaskList = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 500px;
   @media (min-width: ${BREAKPOINT.MEDIUM}) {
     display: flex;
     flex-direction: column;
-    width: 100%;
     max-width: 500px;
   }
 `;
