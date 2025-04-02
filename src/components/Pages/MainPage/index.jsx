@@ -19,12 +19,11 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  gap: 10px;
+  gap: 20px;
   @media (min-width: ${BREAKPOINT.MEDIUM}) {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 20px;
     padding: 60px 20px 10px;
   }
 `;
@@ -32,13 +31,11 @@ const StyledWrapper = styled.div`
 const StyledTaskList = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 93%;
-  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
   @media (min-width: ${BREAKPOINT.MEDIUM}) {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 30%;
+    width: 100%;
   }
 `;
