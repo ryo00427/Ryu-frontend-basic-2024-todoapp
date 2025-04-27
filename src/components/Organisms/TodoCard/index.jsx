@@ -35,7 +35,6 @@ export const TodoCard = () => {
 
   const onTaskNameChange = (value, index) => {
     if (value.trim() === "") {
-      // 先にタスク削除
       setTaskList((prevTaskList) => prevTaskList.filter((_, i) => i !== index));
 
       setTimeout(() => {
