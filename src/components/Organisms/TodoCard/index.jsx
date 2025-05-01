@@ -7,22 +7,12 @@ import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 export const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
   const { setAlert } = useAlertHandlerContext();
+
   useEffect(() => {
     const savedTasks = localStorage.getItem("taskList");
     if (savedTasks) {
       setTaskList(JSON.parse(savedTasks));
     }
-  }, []);
-
-  useEffect(() => {
-    let isMounted = true;
-    const savedTasks = localStorage.getItem("taskList");
-    if (savedTasks && isMounted) {
-      setTaskList(JSON.parse(savedTasks));
-    }
-    return () => {
-      isMounted = false;
-    };
   }, []);
 
   const onAddTaskButtonClick = () => {
@@ -35,11 +25,12 @@ export const TodoCard = () => {
 
   const onTaskNameChange = (value, index) => {
     if (value.trim() === "") {
-      setTaskList((prevTaskList) => prevTaskList.filter((_, i) => i !== index));
-
+      setAlert("タスクの名前が設定されていません");
       setTimeout(() => {
-        setAlert("タスクの名前が設定されていません");
-      }, 0);
+        setTaskList((prevTaskList) =>
+          prevTaskList.filter((_, i) => i !== index)
+        );
+      }, 100);
 
       return;
     }
@@ -67,8 +58,6 @@ export const TodoCard = () => {
     </StyledWrapper>
   );
 };
-
-export default TodoCard;
 
 const StyledWrapper = styled.div`
   padding: 20px;
