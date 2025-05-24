@@ -8,7 +8,7 @@ const Alert = ({ text, isOpen }) => {
   return (
     <Wrapper aria-hidden={!isOpen} $isOpen={isOpen}>
       <Content>
-        <span aria-hidden={!isOpen}>{text || ""}</span>
+        <TextWrapper>{text || ""}</TextWrapper>
       </Content>
     </Wrapper>
   );
@@ -28,10 +28,12 @@ const Wrapper = styled.div`
 
   @media (max-width: ${BREAKPOINT.MEDIUM}) {
     top: 40px;
-    left: 20px;
-    right: 20px;
-    transform: ${(props) =>
-      props.$isOpen ? "translateY(0)" : "translateY(-10px)"};
+    left: 50%;
+    transform: translateX(-50%)
+      translateY(${(props) => (props.$isOpen ? "0" : "-10px")});
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 `;
 
@@ -39,12 +41,22 @@ const Content = styled.div`
   background-color: ${COLOR.RED};
   color: ${COLOR.WHITE};
   padding: 12px 24px;
-  border-radius: 6px;
-  min-width: 200px;
-  min-height: 40px;
+  border-radius: 8px;
+  width: 360px;
+  max-width: 100%;
+  margin: 0 auto; // ← 枠は中央揃え
   box-sizing: border-box;
-  text-align: center;
-  ${TEXT.S}
+  ${TEXT.S};
+
+  @media (max-width: ${BREAKPOINT.MEDIUM}) {
+    width: 280px;
+    max-width: 100;
+  }
+`;
+
+const TextWrapper = styled.div`
+  text-align: left;
+  word-break: break-word;
 `;
 
 export default Alert;
