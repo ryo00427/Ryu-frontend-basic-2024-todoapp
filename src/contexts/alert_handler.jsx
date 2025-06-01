@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useRef } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const AlertHandlerContext = createContext();
 
@@ -8,40 +8,18 @@ const AlertHandlerProvider = ({ children }) => {
     errorText: "",
   });
 
-  const timeoutRef = useRef(null); // ← タイマーIDを保存
-
   const setAlert = (errorText) => {
     setAlertState({
       visible: true,
       errorText: errorText,
     });
-
-    // 前回のタイマーをクリア
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    // 新しいタイマーをセット
-    timeoutRef.current = setTimeout(() => {
-      setAlertState({
-        visible: false,
-        errorText: "",
-      });
-      timeoutRef.current = null;
-    }, 5000);
   };
 
   const closeAlert = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-
-    setAlertState((prev) => ({
-      ...prev,
+    setAlertState({
       visible: false,
-      // errorText はそのまま残す！
-    }));
+      errorText: "",
+    });
   };
 
   const contextValue = {
