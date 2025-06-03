@@ -19,8 +19,8 @@ const Wrapper = styled.div`
   top: 80px;
   left: 50%;
   transform: translateX(-50%)
-    translateY(${(props) => (props.$isOpen ? "0" : "-10px")});
-  opacity: ${(props) => (props.$isOpen ? 1 : 0)};
+    translateY(${(props) => (props.isOpen ? "0" : "-10px")});
+  opacity: ${(props) => (props.isOpen ? 1 : 0)};
   pointer-events: none;
   transition: all 0.5s ease;
   z-index: 9999;
