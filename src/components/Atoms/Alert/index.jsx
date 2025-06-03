@@ -6,7 +6,7 @@ import BREAKPOINT from "../../../variables/breakpoint";
 
 const Alert = ({ text, isOpen }) => {
   return (
-    <Wrapper $isOpen={isOpen}>
+    <Wrapper isOpen={isOpen}>
       <Content>
         <TextWrapper>{text || ""}</TextWrapper>
       </Content>
